@@ -1,0 +1,1 @@
+./$(dirname $0)/lib/run.sh "build.sh" "$@"

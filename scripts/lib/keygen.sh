@@ -1,0 +1,1 @@
+abuild-keygen -a -n
