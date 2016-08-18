@@ -13,7 +13,10 @@ fi
 docker run \
   -t \
   -i \
-  -v $root:/home/tmpbuild/ \
+  -v $root/apk:/home/tmpbuild/apk \
+  -v $root/packages:/home/tmpbuild/packages \
+  -v $root/packages/scripts:/home/tmpbuild/scripts:ro \
+  -v $root/Dockerfile:/home/tmpbuild/Dockerfile:ro \
   --user tmpbuild \
   $IMAGE_ID \
   "`cat $script_dir/$1`"

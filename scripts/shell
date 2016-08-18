@@ -4,7 +4,10 @@ root="$script_dir/../"
 docker run \
   -t \
   -i \
-  -v $root:/home/tmpbuild/ \
+  -v $root/apk:/home/tmpbuild/apk \
+  -v $root/packages:/home/tmpbuild/packages \
+  -v $root/packages/scripts:/home/tmpbuild/scripts:ro \
+  -v $root/Dockerfile:/home/tmpbuild/Dockerfile:ro \
   --user tmpbuild \
   alpine-apk-build-env \
   /bin/sh
