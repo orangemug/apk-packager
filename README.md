@@ -3,7 +3,11 @@ Build packages for alpine
 
 
 ## Install
+You'll need [docker](https://docker.com) and [git](https://git-scm.com) installed, then just clone
 
+    git clone git@github.com:orangemug/apkbuilder.git
+
+You'll then be able to run the scripts, which will build / run in images in docker containers
 
 
 ## Usage
