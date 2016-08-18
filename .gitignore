@@ -2,3 +2,4 @@
 /apk/*/*/pkg
 *.swp
 *.swo
+/packages
