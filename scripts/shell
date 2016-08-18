@@ -6,5 +6,5 @@ docker run \
   -i \
   -v $root:/home/tmpbuild/ \
   --user tmpbuild \
-  2a277dae52a3 \
+  alpine-apk-build-env \
   /bin/sh

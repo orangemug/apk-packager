@@ -7,11 +7,11 @@ do
   for vdir in ./$dir/*/
   do
     arch="`abuild -A`"
-    for ctarget in "x86" "x86_64" "armhf"
-    # for ctarget in "x86_64"
+    # for ctarget in "x86" "x86_64" "armhf"
+    for ctarget in "x86_64"
     do
       pkgversion=`basename $vdir`
-      echo "Building: $pkgname@$pkgversion ($ctarget)"
+      echo "Building: $pkgname@$pkgversion ($ctarget)..."
 
       oldpwd=`pwd`
       cd $vdir
@@ -19,12 +19,15 @@ do
         pkgdefver="`. ./APKBUILD; echo $pkgver`" 
         if [ "$pkgversion" != $pkgdefver ];
         then
-          echo "Invalid"
+          echo "APKBUILD package version does not match directory name (\"$pkgversion\" != \"$pkgdefver\")"
           exit 1
         fi
 
-        # Build
-        abuild checksum && CHOST=$arch CTARGET=$ctarget abuild -r -K -s "/home/tmpbuild/build-cache/"
+        echo "Calculating package checksum..."
+        abuild checksum
+
+        echo "Packaging..."
+        CHOST=$arch CTARGET=$ctarget abuild -r -K -s "/home/tmpbuild/build-cache/"
       cd $oldpwd
     done
   done
@@ -32,6 +35,14 @@ done
 
 for ctarget in "x86_64"
 do
-  apk index -o /home/tmpbuild/packages/$ctarget/APKINDEX.unsigned.tar.gz /home/tmpbuild/packages-tmp/*/$ctarget/*.apk
-done
+  mkdir -p /home/tmpbuild/packages/$ctarget/
 
+  echo "Sym-linking .apk files..."
+  for apkpath in /home/tmpbuild/packages/*/$ctarget/*.apk
+  do
+    ln -s $apkpath /home/tmpbuild/packages/$ctarget/
+  done;
+
+  echo "Building index..."
+  apk index -o /home/tmpbuild/packages/$ctarget/APKINDEX.tar.gz /home/tmpbuild/packages/*/$ctarget/*.apk
+done
