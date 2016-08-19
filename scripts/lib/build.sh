@@ -92,7 +92,8 @@ do
         then
           echo "Dry run enabled: skipping"
         else
-          abuild checksum
+          echo "foo"
+          # abuild checksum
         fi
 
         echo "Calculating package checksum..."
@@ -100,7 +101,8 @@ do
         then
           echo "Dry run enabled: skipping"
         else
-          CHOST=$arch CTARGET=$ctarget abuild -r -K -s "/home/tmpbuild/build-cache/"
+          echo "foo"
+          # CHOST=$arch CTARGET=$ctarget abuild -r -K -s "/home/tmpbuild/build-cache/"
         fi
 
         echo "Packaging..."
@@ -128,10 +130,17 @@ else
     echo "Sym-linking .apk files from ./packages directory"
     for apkpath in /home/tmpbuild/packages/*/$ctarget/*.apk
     do
+      sym_to_path="/home/tmpbuild/repository/$ctarget/`basename $apkpath`"
+      if [ -f $sym_to_path ];
+      then
+        echo "removing: $sym_to_path"
+        rm "/home/tmpbuild/repository/$ctarget/`basename $apkpath`"
+      fi
+      echo "linking: $sym_to_path"
       ln -s $apkpath /home/tmpbuild/repository/$ctarget/
     done;
 
     echo "Building index..."
-    apk index -o /home/tmpbuild/repository/$ctarget/APKINDEX.tar.gz /home/tmpbuild/repository/*.apk
+    apk index -o /home/tmpbuild/repository/$ctarget/APKINDEX.tar.gz /home/tmpbuild/repository/$ctarget/*.apk
   done
 fi

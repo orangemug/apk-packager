@@ -14,6 +14,7 @@ docker run \
   -t \
   -i \
   -v $root/apk:/home/tmpbuild/apk \
+  -v $root/repository:/home/tmpbuild/repository \
   -v $root/packages:/home/tmpbuild/packages \
   -v $root/scripts:/home/tmpbuild/scripts \
   -v $root/Dockerfile:/home/tmpbuild/Dockerfile:ro \
