@@ -15,8 +15,10 @@ docker run \
   -i \
   -v $root/apk:/home/tmpbuild/apk \
   -v $root/packages:/home/tmpbuild/packages \
-  -v $root/packages/scripts:/home/tmpbuild/scripts:ro \
+  -v $root/scripts:/home/tmpbuild/scripts \
   -v $root/Dockerfile:/home/tmpbuild/Dockerfile:ro \
   --user tmpbuild \
   $IMAGE_ID \
-  "`cat $script_dir/$1`"
+  "/home/tmpbuild/scripts/lib/$1 $2 $3 $4 $5"
+ 
+ 
