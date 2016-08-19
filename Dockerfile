@@ -14,4 +14,3 @@ RUN su tmpbuild
 VOLUME  /home/tmpbuild/
 WORKDIR /home/tmpbuild/
 
-ENTRYPOINT ["/bin/sh", "-c"]
