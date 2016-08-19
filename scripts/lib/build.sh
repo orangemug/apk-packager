@@ -123,15 +123,15 @@ then
 else
   for ctarget in "x86_64"
   do
-    mkdir -p /home/tmpbuild/packages/$ctarget/
+    mkdir -p /home/tmpbuild/repository/$ctarget/
 
-    echo "Sym-linking .apk files..."
+    echo "Sym-linking .apk files from ./packages directory"
     for apkpath in /home/tmpbuild/packages/*/$ctarget/*.apk
     do
-      ln -s $apkpath /home/tmpbuild/packages/$ctarget/
+      ln -s $apkpath /home/tmpbuild/repository/$ctarget/
     done;
 
     echo "Building index..."
-    apk index -o /home/tmpbuild/packages/$ctarget/APKINDEX.tar.gz /home/tmpbuild/packages/*/$ctarget/*.apk
+    apk index -o /home/tmpbuild/repository/$ctarget/APKINDEX.tar.gz /home/tmpbuild/repository/*.apk
   done
 fi

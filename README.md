@@ -11,21 +11,23 @@ You'll then be able to run the scripts, which will build / run in images in dock
 
 
 ## Usage
-Build all files
+The APKBUILD files live in `./apk/{package}/{version}`, to build all the packages run
 
     ./scripts/build
 
-To build a particular files
+To build all versions of a particular package run
     
-    ./scripts/build [apk-path]
+    ./scripts/build package_name
 
-This will create a package index file in
+To build a specific version of a package run
 
-    ./packages/x86_64/APKINDEX.tar.gz
+    ./scripts/build package_name 0.1.0
+
+The above will build the package to `./packages` with the repository built in `./repository`
 
 To install from this repo use
 
-    apk add --repository "file://$(pwd)/packages" [pkg-name]
+    apk add --update --repository "file://$(pwd)/repository" [pkg-name]
 
 
 ## License
