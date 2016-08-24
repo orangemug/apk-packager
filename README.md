@@ -108,7 +108,7 @@ You can also generate a github pages index
     checkout [master]
 
 
-### Continuous Integration
+### Continuous Delivery
 There a full example at [orangemug/apk-pkgs](github.com/orangemug/apk-pkgs) if you look at the `circle.yml`
 
     build:
