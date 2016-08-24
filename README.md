@@ -13,7 +13,21 @@ Build and host alpine linux apk packages, both locally and publish them to githu
 ## Install
 You'll need [docker](https://docker.com) installed, then just run
 
-    docker run -v $(pwd):~/ orangemug/apk-cd --help
+    $ docker run -v $(pwd):~/ orangemug/apk-cd --help
+    0.1.0
+
+You can also install it as an npm package
+
+    npm install -g orangemug/apk-cd
+
+This will add the `apk-cd` to your `PATH`
+
+    $ apk-cd --version
+    0.1.0
+
+Show usage with 
+
+    $ apk-cd --help
     Continous delivery for your alpine apk packages
 
     Usage: apk-cd <command> [opts]
@@ -32,15 +46,15 @@ You'll need [docker](https://docker.com) installed, then just run
 ## Usage
 The `APKBUILD` files live in `./apk/{package_name}/{package_version}`, to build all the packages run
 
-    ./scripts/build
+    apk-cd build
 
 To build all versions of a particular package run
     
-    ./scripts/build [package_name]
+    apk-cd build [package_name]
 
 To build a specific version of a package run
 
-    ./scripts/build [package_name] [package_version]
+    apk-cd build [package_name] [package_version]
 
 The above will build the package to `./packages` with the repository built in `./repository`
 
@@ -56,7 +70,7 @@ You can then run `apk add [package_name]` to install the packages you just creat
 ### Remote repository
 Publish to your 'personal package manager' (github) run
 
-    ./scripts/publish
+    $ apk-cd publish
     Publishing 3 packages to 'githib.com/orangemug/apk-test' (master)
     [publishing] vips
     [publishing] vips-docs
