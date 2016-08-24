@@ -123,7 +123,7 @@ On each commit it'll
  2. _Publish_ the packages
  3. _Generate_ a github pages site
 
-You can see the completed site at <http://orangemug.github.io/apk-pkgs>
+You can see the completed site at <https://orangemug.github.io/apk-pkgs>
 
 
 
