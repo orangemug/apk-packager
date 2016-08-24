@@ -40,6 +40,7 @@ Show usage with
 
       build      Build packages in ./apk
       publish    Publish packages to github
+      gh-pages   Generate github pages for the package index
       info       Get info about the build
 
 
@@ -91,6 +92,39 @@ As the instructions above read just run the following to use your new repo
     apk add update \
       --allow-untrusted \
       --repository 'https://github.com/orangemug/apk-test/releases/download/master'
+
+You can also generate a github pages index
+
+    $ apk-cd gh-pages
+    checkout [gh-pages]
+    cleaing [gh-pages]
+    assets: ./public
+    verify: github[vips] Checking
+    verify: github[vips] Ok
+    build: ./master/vips.html
+    build: ./master/index.html
+    build: ./index.html
+    complete (101ms)
+    checkout [master]
+
+
+### Continuous Integration
+There a full example at [orangemug/apk-pkgs](github.com/orangemug/apk-pkgs) if you look at the `circle.yml`
+
+    build:
+      - apk-cd build
+    deploy:
+      - apk-cd publish
+      - apk-cd gh-pages
+
+On each commit it'll
+
+ 1. _Build_ the packages
+ 2. _Publish_ the packages
+ 3. _Generate_ a github pages site
+
+You can see the completed site at <http://orangemug.github.io/apk-pkgs>
+
 
 
 ## License
