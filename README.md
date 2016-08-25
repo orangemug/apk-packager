@@ -109,21 +109,25 @@ You can also generate a github pages index
 
 
 ### Continuous Delivery
-There a full example at [orangemug/apk-pkgs](github.com/orangemug/apk-pkgs) if you look at the `circle.yml`
+To install a CI builder run
 
-    build:
-      - apk-cd build
-    deploy:
-      - apk-cd publish
-      - apk-cd gh-pages
+    apk setup-ci <service>
 
-On each commit it'll
+Where service one of
+
+ - circle
+ - travis
+ - semaphore
+
+It'll install the config files in the repository.
+
+The installed config on each commit will
 
  1. _Build_ the packages
  2. _Publish_ the packages
  3. _Generate_ a github pages site
 
-You can see the completed site at <https://orangemug.github.io/apk-pkgs>
+You can see the completed site at <https://orangemug.github.io/apk-pkgs> and the repository is at <https://github.com/orangemug/apk-pkgs>
 
 
 
