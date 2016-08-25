@@ -1,0 +1,10 @@
+test:
+  pre: apk-cd build
+  post: apk-cd verify
+deployment:
+  packages:
+    commands:
+      - apk-cd publish
+  web:
+    commands:
+      - apk-cd web
