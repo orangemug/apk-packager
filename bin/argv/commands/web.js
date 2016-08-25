@@ -5,7 +5,7 @@ module.exports = {
     return yargs
       .strict()
       .demand(0)
-      .usage("Usage: $0 "+module.exports.command)
+      .usage("Usage: $0 "+module.exports.command+" [root-dir]")
       .help("h")
       .argv;
   },

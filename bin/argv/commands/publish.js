@@ -4,7 +4,7 @@ module.exports = {
   parse: function(yargs) {
     return yargs
       .reset()
-      .usage("Usage: $0 "+module.exports.command)
+      .usage("Usage: $0 "+module.exports.command+" [root-dir]")
       .argv;
   },
   handler: function(argv) {
