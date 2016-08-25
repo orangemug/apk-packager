@@ -1,1 +1,0 @@
-./$(dirname $0)/lib/run.sh node publish "$@"
