@@ -127,8 +127,7 @@ The installed config on each commit will
  2. _Publish_ the packages
  3. _Generate_ a github pages site
 
-You can see the completed site at <https://orangemug.github.io/apk-pkgs> and the repository is at <https://github.com/orangemug/apk-pkgs>
-
+Theres an example at <https://github.com/orangemug/apk-pkgs>
 
 
 ## License
