@@ -1,0 +1,30 @@
+pkgname="hello-world.c"
+pkgver=1.0.0
+pkgrel=0
+pkgdesc="Prints \"Hello World\""
+url="https://github.com/orangemug/hello-world.c"
+arch="all"
+license="MIT"
+depends=""
+depends_dev=""
+makedepends="$depends_dev"
+install=""
+subpackages=""
+source="$pkgname-$pkgver.tar.gz::https://github.com/orangemug/hello-world.c/archive/v${pkgver}.tar.gz"
+
+_builddir="${srcdir}/${pkgname}-${pkgver}"
+
+build() {
+  cd "$_builddir"
+  make
+}
+
+package() {
+  cd "$_builddir"
+  mkdir -p "$pkgdir"/bin
+  make DESTDIR="$pkgdir" install
+}
+
+md5sums="c8ebf97c13a7c2f152d0756d025c7457  hello-world.c-1.0.0.tar.gz"
+sha256sums="2be7809751a8eb41e382540fed321573b09357f827fd547201d66e8150195150  hello-world.c-1.0.0.tar.gz"
+sha512sums="903b21448927c82e8e581c5eba5a9ff9bb01a26a329ba8076e836b75bb9086339463a5ab7f38a1fe63539eb77d121bd68b594c35dadad9b1f71c0c1be5b73b8f  hello-world.c-1.0.0.tar.gz"
