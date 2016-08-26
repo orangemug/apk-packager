@@ -10,6 +10,6 @@ module.exports = {
       .argv;
   },
   handler: function(argv) {
-    console.log("publish", argv);
+    console.log("Not yet implemented");
   }
 };
