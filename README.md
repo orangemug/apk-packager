@@ -128,7 +128,7 @@ The installed config on each commit will
  2. _Publish_ the packages
  3. _Generate_ a github pages site
 
-Theres an example at <https://github.com/orangemug/apk-pkgs>
+Theres an example at <https://github.com/orangemug/apk-example-repo>
 
 
 ## License
