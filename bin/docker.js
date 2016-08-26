@@ -19,8 +19,6 @@ else {
   rootdir = process.cwd()
 }
 
-console.log(rootdir)
-
 var args = ["node", "./bin/cli.js"].concat(
   process.argv.slice(2)
 );
