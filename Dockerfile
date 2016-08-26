@@ -16,3 +16,7 @@ RUN su tmpbuild
 VOLUME  /home/tmpbuild/
 WORKDIR /home/tmpbuild/
 
+COPY bin bin
+COPY package.json package.json
+
+RUN npm install

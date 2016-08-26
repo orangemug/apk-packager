@@ -19,6 +19,8 @@ else {
   rootdir = process.cwd()
 }
 
+console.log(rootdir)
+
 var args = ["node", "./bin/cli.js"].concat(
   process.argv.slice(2)
 );
@@ -26,13 +28,10 @@ var args = ["node", "./bin/cli.js"].concat(
 // var args = ["ls", "-l", "/home/tmpbuild/node_modules"]
 
 docker
-  .run("orangemug/apk-cd"/*+pkg.version*/, args, [process.stdout, process.stderr], {
+  .run("orangemug/apk-packager"/*+pkg.version*/, args, [process.stdout, process.stderr], {
     "Tty": false,
     "user": "tmpbuild",
     "Binds": [
-      rootdir+"/bin:/home/tmpbuild/bin",
-      rootdir+"/node_modules:/home/tmpbuild/node_modules",
-      rootdir+"/package.json:/home/tmpbuild/package.json",
       rootdir+"/apk:/home/tmpbuild/apk",
       rootdir+"/repository:/home/tmpbuild/repository",
       rootdir+"/packages:/home/tmpbuild/packages"
