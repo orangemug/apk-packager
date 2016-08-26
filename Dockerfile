@@ -13,10 +13,9 @@ RUN sudo chmod g+w /var/cache/distfiles
 
 RUN su tmpbuild
 
-VOLUME  /home/tmpbuild/
 WORKDIR /home/tmpbuild/
 
-COPY bin bin
-COPY package.json package.json
+COPY ./bin ./bin
+COPY ./package.json ./package.json
 
-RUN npm install
+RUN ["npm", "install"]
