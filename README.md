@@ -1,4 +1,4 @@
-# apk-cd
+# apk-packager
 Continous delivery for your alpine apk packages
 
 [![stability-unstable](https://img.shields.io/badge/stability-unstable-yellow.svg)][stability]
@@ -13,24 +13,24 @@ Build and host alpine linux apk packages, both locally and publish them to githu
 ## Install
 You'll need [docker](https://docker.com) installed, then just run
 
-    $ docker run -v $(pwd):~/ orangemug/apk-cd --help
+    $ docker run -v $(pwd):~/ orangemug/apk-packager --help
     0.1.0
 
 You can also install it as an npm package
 
-    npm install -g orangemug/apk-cd
+    npm install -g orangemug/apk-packager
 
-This will add the `apk-cd` to your `PATH`
+This will add the `apk-packager` to your `PATH`
 
-    $ apk-cd --version
+    $ apk-packager --version
     0.1.0
 
 Show usage with 
 
-    $ apk-cd --help
+    $ apk-packager --help
     Continous delivery for your alpine apk packages
 
-    Usage: apk-cd <command> [opts]
+    Usage: apk-packager <command> [opts]
 
     Options:
 
@@ -47,15 +47,15 @@ Show usage with
 ## Usage
 The `APKBUILD` files live in `./apk/{package_name}/{package_version}`, to build all the packages run
 
-    apk-cd build
+    apk-packager build
 
 To build all versions of a particular package run
     
-    apk-cd build [package_name]
+    apk-packager build [package_name]
 
 To build a specific version of a package run
 
-    apk-cd build [package_name] [package_version]
+    apk-packager build [package_name] [package_version]
 
 The above will build the package to `./packages` with the repository built in `./repository`
 
@@ -71,7 +71,7 @@ You can then run `apk add [package_name]` to install the packages you just creat
 ### Remote repository
 Publish to your 'personal package manager' (github) run
 
-    $ apk-cd publish
+    $ apk-packager publish
     Publishing 3 packages to 'githib.com/orangemug/apk-test' (master)
     [publishing] vips
     [publishing] vips-docs
@@ -95,7 +95,7 @@ As the instructions above read just run the following to use your new repo
 
 You can also generate a github pages index
 
-    $ apk-cd gh-pages
+    $ apk-packager gh-pages
     checkout [gh-pages]
     cleaing [gh-pages]
     assets: ./public
