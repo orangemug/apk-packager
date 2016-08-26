@@ -11,7 +11,7 @@ RUN sudo addgroup tmpbuild abuild
 RUN sudo chgrp abuild /var/cache/distfiles
 RUN sudo chmod g+w /var/cache/distfiles
 
-RUN su tmpbuild
+USER tmpbuild
 
 WORKDIR /home/tmpbuild/
 
