@@ -126,7 +126,7 @@ module.exports = {
 
             results.forEach(function(def) {
               def.packages.forEach(function(pkgname) {
-                var apkname   = pkgname+"-"+def.pkgver+"-"+def.pkgrel+".apk";
+                var apkname   = pkgname+"-"+def.pkgver+"-r"+def.pkgrel+".apk";
                 var sympath   = repopath+apkname;
                 var apkpath   = "./packages/"+pkgname+"/x86_64/"+apkname;
 
