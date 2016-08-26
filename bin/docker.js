@@ -1,3 +1,4 @@
+#!/usr/bin/env node
 /**
  * Boots a docker container
  */

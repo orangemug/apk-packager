@@ -1,3 +1,4 @@
+#!/usr/bin/env node
 var argv     = require("./argv");
 var commands = require("./argv/commands");
 
