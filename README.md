@@ -72,7 +72,7 @@ You can then run `apk add [package_name]` to install the packages you just creat
 Publish to your 'personal package manager' (github) run
 
     $ apk-packager publish
-    Publishing 3 packages to 'githib.com/orangemug/apk-test' (master)
+    Publishing 3 packages to 'githib.com/orangemug/apk-example-repo' (master)
     [publishing] vips
     [publishing] vips-docs
     [publishing] vips-dev
@@ -80,18 +80,19 @@ Publish to your 'personal package manager' (github) run
     [complete]   vips-docs
     [complete]   vips-dev
 
-    Complete repo published at 'https://github.com/orangemug/apk-test/releases/download/master' to use
+    Complete repo published at 'https://github.com/orangemug/apk-example-repo/releases/download/master' to use
 
       apk add update \
         --allow-untrusted \
-        --repository 'https://github.com/orangemug/apk-test/releases/download/master'
-      apk add [package_name]
+        --repository 'https://github.com/orangemug/apk-example-repo/releases/download/master' [package-name]
 
 As the instructions above read just run the following to use your new repo
 
-    apk add update \
+    apk add \
       --allow-untrusted \
-      --repository 'https://github.com/orangemug/apk-test/releases/download/master'
+      --repository 'https://github.com/orangemug/apk-example-repo/releases/download/master' \
+      hello-world
+
 
 You can also generate a github pages index
 
