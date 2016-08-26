@@ -1,5 +1,5 @@
 {
-  "name": "apkbuilder",
+  "name": "apk-packager",
   "version": "0.1.0",
   "bin": {
     "apk-packager": "./bin/docker.js"
