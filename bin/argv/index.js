@@ -7,7 +7,6 @@ var commands = require("./commands");
 module.exports = yargs
   .usage("Usage: $0 <command> [options] [root-dir]")
   .strict()
-  .demand(1)
   .command(
     commands.build.command,
     commands.build.description,

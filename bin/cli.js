@@ -1,6 +1,7 @@
 #!/usr/bin/env node
 var argv     = require("./argv");
 var commands = require("./argv/commands");
+var pkg      = require("../package.json");
 
 
 if(argv._.length > 0) {
