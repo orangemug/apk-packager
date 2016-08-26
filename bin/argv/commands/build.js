@@ -131,7 +131,7 @@ module.exports = {
                 var apkpath   = "./packages/"+pkgname+"/x86_64/"+apkname;
 
                 commands.push("rm "+sympath+" || true");
-                commands.push("ln -s "+apkpath+" "+sympath);
+                commands.push("ln -s "+path.relative(path.dirname(sympath), apkpath)+" "+sympath);
               });
             });
 
