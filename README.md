@@ -1,10 +1,10 @@
 # apk-packager
 Continous delivery for your alpine apk packages
 
-[![stability-unstable](https://img.shields.io/badge/stability-unstable-yellow.svg)][stability]
+[![stability-wip](https://img.shields.io/badge/stability-work_in_progress-lightgrey.svg)][stability]
 [![Build Status](https://circleci.com/gh/orangemug/apkbuilder.png?style=shield)][circleci]
 
-[stability]:   https://github.com/orangemug/stability-badges#unstable
+[stability]:   https://github.com/orangemug/stability-badges#work-in-progress
 [circleci]:    https://circleci.com/gh/orangemug/apkbuilder
 
 Build and host alpine linux apk packages, both locally and publish them to github releases to use externally
