@@ -1,6 +1,9 @@
 {
   "name": "apkbuilder",
   "version": "0.1.0",
+  "bin": {
+    "apk-packager": "node ./bin/docker.js"
+  },
   "dependencies": {
     "bluebird": "^3.4.3",
     "child-process-promise": "^2.1.3",
