@@ -1,7 +1,8 @@
-var path = require("path");
-var fsp = require("fs-promise");
+var cp        = require("child_process");
+var fsp       = require("fs-promise");
 var GitHubApi = require("github");
-var cp = require("child_process");
+var path      = require("path");
+
 
 var AUTH_TOKEN = process.env.GITHUB_ACCESS_TOKEN;
 
