@@ -114,10 +114,10 @@ module.exports = {
         }
       })
       .then(function(release) {
-        var basepath = path.join(__dirname, "repository/x86_64");
+        var basepath = path.join(process.cwd(), "repository/x86_64");
 
         return fsp
-          .readdir(__dirname+"/repository/x86_64")
+          .readdir(basepath)
           .then(function(data) {
             return github.repos.listAssets({
               user: gitUser,
