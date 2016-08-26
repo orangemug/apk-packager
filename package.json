@@ -2,7 +2,7 @@
   "name": "apkbuilder",
   "version": "0.1.0",
   "bin": {
-    "apk-packager": "node ./bin/docker.js"
+    "apk-packager": "./bin/docker.js"
   },
   "dependencies": {
     "bluebird": "^3.4.3",
