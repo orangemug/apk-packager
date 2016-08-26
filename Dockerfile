@@ -2,7 +2,8 @@ FROM alpine
 
 RUN apk add --no-cache \
   alpine-sdk \
-  nodejs
+  nodejs \
+  git
 
 RUN adduser tmpbuild -D
 RUN echo "tmpbuild    ALL = (ALL) NOPASSWD: ALL" >> /etc/sudoers
