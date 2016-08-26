@@ -29,7 +29,11 @@ docker
   .run("orangemug/apk-packager"/*+pkg.version*/, args, [process.stdout, process.stderr], {
     "Tty": false,
     "user": "tmpbuild",
+    "Env": [
+      "GITHUB_ACCESS_TOKEN="+process.env.GITHUB_ACCESS_TOKEN
+    ],
     "Binds": [
+      rootdir+"/.git:/home/tmpbuild/.git:ro",
       rootdir+"/apk:/home/tmpbuild/apk",
       rootdir+"/repository:/home/tmpbuild/repository",
       rootdir+"/packages:/home/tmpbuild/packages"
