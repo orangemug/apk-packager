@@ -121,7 +121,7 @@ module.exports = {
                 commands.push("cd "+obj.filepath+"; abuild fetch");
                 commands.push("cd "+obj.filepath+"; abuild unpack");
                 commands.push("cd "+obj.filepath+"; abuild prepare");
-                commands.push("cd "+obj.filepath+"; abuild build");
+                commands.push("cd "+obj.filepath+"; abuild build -r");
                 commands.push("cd "+obj.filepath+"; abuild rootpkg");
                 commands.push("cd "+obj.filepath+"; abuild cleanup");
                 // -r -K -s /home/tmpbuild/build-cache/");
