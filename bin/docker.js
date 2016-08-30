@@ -23,7 +23,6 @@ var args = ["node", "./bin/cli.js"].concat(
   process.argv.slice(2)
 );
 
-// var args = ["ls", "-l", "/home/tmpbuild/node_modules"]
 
 docker
   .run("orangemug/apk-packager"/*+pkg.version*/, args, [process.stdout, process.stderr], {
@@ -34,9 +33,9 @@ docker
     ],
     "Binds": [
       rootdir+"/.git:/home/tmpbuild/.git:ro",
-      rootdir+"/apk:/home/tmpbuild/apk",
-      rootdir+"/repository:/home/tmpbuild/repository",
-      rootdir+"/packages:/home/tmpbuild/packages"
+      rootdir+"/apk/:/home/tmpbuild/apk",
+      rootdir+"/repository/:/home/tmpbuild/repository",
+      rootdir+"/packages/:/home/tmpbuild/packages"
     ]
   }, function(err, data, container) {
     if(err) {
