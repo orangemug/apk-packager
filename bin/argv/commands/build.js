@@ -79,9 +79,11 @@ module.exports = {
                     cwd: filepath
                   })
                   .then(function(data) {
+                    var parts = data.stdout.replace(/^\s|\s$/g, "").split(/\s+/);
                     return {
                       filepath: filepath,
-                      packages: data.stdout.replace(/^\s|\s$/g, "").split(/\s+/)
+                      package: parts[0],
+                      subpackages: parts.slice(1)
                     };
                   })
               })
@@ -116,12 +118,12 @@ module.exports = {
                 commands.push("cd "+obj.filepath+"; abuild checksum");
                 commands.push("mkdir -p /home/tmpbuild/build-cache")
                 commands.push("cd "+obj.filepath+"; abuild sanitycheck");
-                commands.push("cd "+obj.filepath+"; abuild builddeps");
+                commands.push("cd "+obj.filepath+"; abuild deps");
                 commands.push("cd "+obj.filepath+"; abuild clean");
                 commands.push("cd "+obj.filepath+"; abuild fetch");
                 commands.push("cd "+obj.filepath+"; abuild unpack");
                 commands.push("cd "+obj.filepath+"; abuild prepare");
-                commands.push("cd "+obj.filepath+"; abuild build -r");
+                commands.push("cd "+obj.filepath+"; abuild build");
                 commands.push("cd "+obj.filepath+"; abuild rootpkg");
                 commands.push("cd "+obj.filepath+"; abuild cleanup");
                 // -r -K -s /home/tmpbuild/build-cache/");
@@ -133,10 +135,10 @@ module.exports = {
             var repoIndex = repopath+"APKINDEX.tar.gz";
 
             results.forEach(function(def) {
-              def.packages.forEach(function(pkgname) {
-                var apkname   = pkgname+"-"+def.pkgver+"-r"+def.pkgrel+".apk";
+              def.subpackages.forEach(function(subpkgname) {
+                var apkname   = subpkgname+"-"+def.pkgver+"-r"+def.pkgrel+".apk";
                 var sympath   = repopath+apkname;
-                var apkpath   = "./packages/"+pkgname+"/x86_64/"+apkname;
+                var apkpath   = "./packages/"+def.package+"/x86_64/"+apkname;
 
                 commands.push("rm "+sympath+" || true");
                 commands.push("ln -s "+path.relative(path.dirname(sympath), apkpath)+" "+sympath);
