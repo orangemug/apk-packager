@@ -1,7 +1,0 @@
-. ./APKBUILD-ref
-
-pkgname="nodejs-lts"
-subpackages="$pkgname-dev $pkgname-doc"
-md5sums="1885586b4b8a2263f77dce27855661e9  node-v4.5.0.tar.gz"
-sha256sums="74ced83b8d890d90e2a8b0d54b0d0e9b5e01d6fd6148cec6e9911ff6eaf0cf21  node-v4.5.0.tar.gz"
-sha512sums="c4ad7382a387365febc664b11253b01d8e638501419daca0f26eecad9fa285dc9745d81c406aa015ad48d8f2e41371c216494b1318ce5e3c12a945d6e837e790  node-v4.5.0.tar.gz"
