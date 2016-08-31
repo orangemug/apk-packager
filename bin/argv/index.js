@@ -26,5 +26,5 @@ module.exports = yargs
   .alias("version", "v")
   .help("help")
   .alias("help", "h")
-  .epilogue("For more information <https://github.com/orangemug/apk-cd>")
+  .epilogue("For more information <https://github.com/orangemug/apk-packager>")
   .argv;
