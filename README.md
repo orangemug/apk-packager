@@ -2,10 +2,10 @@
 Build and publish your [alpine linux](https://alpinelinux.org) apk packages
 
 [![stability-wip](https://img.shields.io/badge/stability-work_in_progress-lightgrey.svg)][stability]
-[![Build Status](https://circleci.com/gh/orangemug/apkbuilder.png?style=shield)][circleci]
+[![Build Status](https://circleci.com/gh/orangemug/apk-packager.png?style=shield)][circleci]
 
 [stability]:   https://github.com/orangemug/stability-badges#work-in-progress
-[circleci]:    https://circleci.com/gh/orangemug/apkbuilder
+[circleci]:    https://circleci.com/gh/orangemug/apk-packager
 
 Build and host alpine linux apk packages, both locally and publish them to github releases to use externally
 
